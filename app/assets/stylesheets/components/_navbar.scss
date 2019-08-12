@@ -1,12 +1,44 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+
+.navbar-toggler-icon {
+	color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#nav-logo {
+	width:150px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-link {
+	color: rgba(255,255,255,0.6) !important;
+	font-size: 0.8rem;
+	line-height: 1rem;
+
+}
+.nav-bg {
+	background-color: transparent;
+}
+
+
+// Bootstrap
+
+@media (min-width: 992px) {
+	.navbar-expand-lg .navbar-nav .dropdown-menu {
+	    position: fixed;
+	}
+	.dropdown-menu {
+		top: 73px;
+		width: 100%;
+	} 
 }
