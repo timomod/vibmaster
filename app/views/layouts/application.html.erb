@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vibrationmaster</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,16 +12,14 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <!-- GREEN DIVIDER SECTION -->
-  <section class="bgr-green section-green"> 
-    <div class="container">
-      xxxxxx
-    </div>
-    
-  </section>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+   <!--  <div style="position: fixed; top:72px; z-index: 900; width: 100%; background-color: green; min-height: 0px;">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div> -->
     <%= yield %>
+
+    <%= render "shared/footer" %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

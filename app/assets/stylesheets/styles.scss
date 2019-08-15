@@ -434,7 +434,7 @@ width: 100%;
  /*SECTIONS ************************************************************ */
 
  .section-green {
- 	padding: 330px 0;
+ 	padding: 30px 0;
 
  }
 
@@ -923,18 +923,21 @@ width: 100%;
  .footer-section {
  	padding: 20px 30px 80px;
  	background-color: rgba(0,0,0,1);
- }
 
- .footer-section>div>div{
- 	border: 1px solid rgba(255,255,255,0.5);
- 	margin: -0.5px;
- 	padding:5px 5px;
- }
-
- .footer-section .top-row {
+ 	& div > div {
+ 		border: 1px solid rgba(255,255,255,0.5);
+ 		margin: -0.5px;
+ 		padding:5px 5px;
+ 	}
+ 	& .top-row {
  	padding:0 0 40px;
  	/*text-transform: uppercase;*/
  }
+
+ }
+
+
+
  .footer-logo {
  	width: 150px;
  }
