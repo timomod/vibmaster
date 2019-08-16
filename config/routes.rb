@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
-  get 'articles/home'
-  get 'articles/press'
-  get 'articles/casestudies'
-  get 'articles/science'
-  get 'articles/standards_glossary'
-  get 'articles/factsheets'
-  get 'articles/manuals'
+  get 'products', to: 'pages#products'
+  get 'products/j121-j160', to: 'pages#j121', as: 'portable_series'
+  get 'products/j600-j900', to: 'pages#j900', as: 'rd_series'
+
+
+  get 'knowledge-center', to: 'articles#home', as: 'knowledge_center'
+  get 'knowledge-center/articles', to: 'articles#press', as: 'articles'
+  get 'knowledge-center/case-studies', to: 'articles#casestudies', as: 'casestudies'
+  get 'knowledge-center/science', to: 'articles#science', as: 'science'
+  get 'knowledge-center/standards-and-glossary', to: 'articles#standards_glossary', as: 'glossary'
+  get 'knowledge-center/factsheets', to: 'articles#factsheets', as: 'factsheets'
+  get 'knowledge-center/manuals', to: 'articles#manuals', as: 'manulals'
   devise_for :users
+
   root to: 'pages#home'
 
   resources :pages

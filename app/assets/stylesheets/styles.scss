@@ -55,6 +55,9 @@ p, li { font-size: 0.9rem; }
 .text-right {
 	text-align: right;
 }
+.centered {
+	text-align: center;
+}
 
 
 
@@ -637,6 +640,41 @@ width: 100%;
 	}
  }
 
+ /* DEVISE PAGE STYLES ************************************************ DEVISE PAGE STYLES */
+
+ #devise-hero-section {
+	height: 30vh;
+	padding: 0px;
+}
+
+.devise-hero {
+	height:30vh; 
+	width: 100%; 
+	position: absolute; 
+	top: 0px; 
+	left: 0px
+}
+
+.devise-hero-image {
+	background-color: gray; 
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.devise-hero-gradient {
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.1)); 
+}
+.devise-hero-overlay {
+	// background-image: url("../img/overlay-pattern.png");
+	background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.devise-content {
+	margin: 60px 0;
+}
+
+
 
  /*PRODUCT PAGE STYLES    ************************************************* PRODUCT PAGE STYLES  */
 
@@ -659,26 +697,12 @@ width: 100%;
 
 }
 
-.prod-hero-image-j900 {
-	background-image: url("../img/j900-02.jpg");
-}
-
-
-.prod-hero-image-j121 {
-	background-image: url("../img/j121.jpg");
-}
-
-.prod-hero-image-testing {
-	background-image: url("../img/j900-02.jpg");
-}
-
-
 
 .prod-hero-gradient {
 	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)); 
 }
 .prod-hero-overlay {
-	background-image: url("../img/overlay-pattern.png");
+	// background-image: url("../img/overlay-pattern.png");
 	background-repeat: repeat;
     background-attachment: scroll;
 }

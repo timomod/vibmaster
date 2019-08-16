@@ -1,10 +1,14 @@
 <header>
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark nav-bg">
 			<!-- LOGO -->
-			<a class="navbar-brand" href="#">
+			
+			
+			<%= link_to root_path do %>
 				<%= image_tag("vibrationmaster_logo_02.png", :alt => "Vibrationmaster Logo", :id => "nav-logo") %>
-				<!-- <img id="nav-logo" src="img/vibrationmaster_logo_02.png" alt=""> -->
-			</a>
+			<% end %>
+
+
+
 			<!-- HAMBURGER -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -27,23 +31,31 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<div class="d-flex flex-column flex-md-row justify-content-md-around">
 								<div>
-									<%= image_tag "navpic-j121.png", class: "dropdown-item dropdown-pic d-none d-md-block" %>
-									<a class="dropdown-item" href="#">Portable series</a>
+									<%= image_tag "navpic-j121.png", class: "dropdown-pic d-none d-md-block" %>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">J121</a>
-									<a class="dropdown-item" href="#">J160</a>
+									<p>Portable series:</p>
+									<%= link_to 'J121 & J160', portable_series_path, class: 'dropdown-item' %>
+									
+									<!-- <a class="dropdown-item" href="#">Overview</a>
+									<a class="dropdown-item" href="#">J121 & J160</a> -->
 								</div>
 
 								<div>
-									<%= image_tag "navpic-j900.png", class: "dropdown-item dropdown-pic d-none d-md-block" %>
-									<a class="dropdown-item" href="#">Research and development series</a>
+									<%= image_tag "navpic-j900.png", class: "dropdown-pic d-none d-md-block" %>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">J600</a>
-									<a class="dropdown-item" href="#">J900</a>
+									<p>Research and development series:</p>
+									<%= link_to 'J600 & J900', rd_series_path, class: 'dropdown-item' %>
+
+									<!-- <a class="dropdown-item" href="#">Overview</a>
+									<a class="dropdown-item" href="#">J600 & J900</a> -->
 								</div>
 
 								<div>
+									<%= image_tag "navpic-testing.png", class: "dropdown-item dropdown-pic d-none d-md-block" %>
+									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Contract testing</a>
+
+									<!-- <a class="dropdown-item" href="#">Let us do the testing for you</a> -->
 								</div>
 							</div>
 							
