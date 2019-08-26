@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 	end
 
 	def products
+		@articles = Article.all
 	end
 
 	def j121
@@ -20,27 +21,5 @@ class PagesController < ApplicationController
 	def j900
 	end
 
-	def index
-		@pages = Page.all
-	end
-
-	def show
-		@page = Pages.find(params[:id])
-	end
-
-	def new
-	end
-
-	def create
-	end
-
-	def edit
-	end
-
-	def update
-	end
-
-	def destroy
-	end
 
 end

@@ -67,12 +67,12 @@
 					  	Knowledge center
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">The science</a>
-							<a class="dropdown-item" href="#">case-studies</a>
-							<a class="dropdown-item" href="#">Articles</a>
-							<a class="dropdown-item" href="#">Standards and Glossary</a>
-							<a class="dropdown-item" href="#">Product Factshhets</a>
-							<a class="dropdown-item" href="#">Operating Manuals</a>
+							<%= link_to 'The science', science_path, class: 'dropdown-item' %>
+							<%= link_to 'Case-studies', casestudies_path, class: 'dropdown-item' %>
+							<%= link_to 'Articles', press_path, class: 'dropdown-item' %>
+							<%= link_to 'Standards and Glossary', glossary_path, class: 'dropdown-item' %>
+							<%= link_to 'Product Factsheets', factsheets_path, class: 'dropdown-item' %>
+							<%= link_to 'Operating Manuals', manuals_path, class: 'dropdown-item' %>
 
 						</div>
 					</li>

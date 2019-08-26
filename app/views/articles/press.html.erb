@@ -1,2 +1,10 @@
-<h1>Articles#press</h1>
-<p>Find me in app/views/articles/press.html.erb</p>
+<h1>News Articles</h1>
+
+<% @press_articles.each do |article| %>
+ <h2><%= article.title %></h2>
+ <h3><%= article.subtitle %></h3>
+ <p><%= article.body %></p>
+ <%= link_to "Read", article_path(article) %>
+<br>
+ <%= link_to "Delete Article", article_path(article), method: :delete %>
+<%end%>

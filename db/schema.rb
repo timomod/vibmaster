@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_152644) do
+ActiveRecord::Schema.define(version: 2019_08_26_143536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,21 @@ ActiveRecord::Schema.define(version: 2019_08_22_152644) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "joint_table_articles_tags", force: :cascade do |t|
+    t.string "articles"
+    t.string "tags"
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

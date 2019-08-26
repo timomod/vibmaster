@@ -1,6 +1,7 @@
-<h1>Products Home - test with all articles index</h1>
+<h1>All Articles</h1>
 
 <% @articles.each do |article| %>
+ <p>Category: <%= article.category %></p>
  <h2><%= article.title %></h2>
  <h3><%= article.subtitle %></h3>
  <p><%= article.body %></p>
