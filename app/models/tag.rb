@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-	has_and_belongs_to_many :articles
+	has_many :articles_tags
+	has_many :articles, through: :articles_tags 
 end

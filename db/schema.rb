@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_143536) do
+ActiveRecord::Schema.define(version: 2019_08_26_224016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,13 @@ ActiveRecord::Schema.define(version: 2019_08_26_143536) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "joint_table_articles_tags", force: :cascade do |t|
-    t.string "articles"
-    t.string "tags"
+  create_table "articles_tags", force: :cascade do |t|
+    t.bigint "article_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_articles_tags_on_article_id"
+    t.index ["tag_id"], name: "index_articles_tags_on_tag_id"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -58,4 +62,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_143536) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "articles_tags", "articles"
+  add_foreign_key "articles_tags", "tags"
 end
