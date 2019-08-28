@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'tags/new'
+  get 'tags/create'
+  get 'tags/destroy'
   get 'products', to: 'pages#products'
   get 'products/j121-j160', to: 'pages#j121', as: 'portable_series'
   get 'products/j600-j900', to: 'pages#j900', as: 'rd_series'
@@ -18,5 +21,7 @@ Rails.application.routes.draw do
   resources :pages
 
   resources :articles
+
+  resources :tags
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

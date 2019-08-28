@@ -10,6 +10,12 @@
  <p><%= @article.promoted %></p>
  <p><%= @article.position %></p>
 
+<ul>
+	<% @article.tags.each do |tag| %>
+		<li><%= tag.content %></li>
+	<% end %>
+</ul>
+
 
 
 

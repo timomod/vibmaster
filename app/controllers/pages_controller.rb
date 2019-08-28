@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
 	def products
 		@articles = Article.all
+		@tags = Tag.all
 	end
 
 	def j121

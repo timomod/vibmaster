@@ -1,6 +1,6 @@
 <%= form_for @article do |f| %>
 	<%= f.label :category, "Choose a category" %>
-	<%= f.text_field :category %>
+	<%= f.select :category, ['News', 'Case-studies', 'Science', 'Standard', 'Glossary', 'Factsheets', 'Manuals']%>
 
 	<%= f.label :title, "Add a title" %>
 	<%= f.text_field :title %>
@@ -19,6 +19,8 @@
 
 	<%= f.label :promoted, "Promoted to front page?" %>
 	<%= f.check_box :promoted %>
+
+	<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :content %>
 
 	<%= f.submit%>
 <% end %>

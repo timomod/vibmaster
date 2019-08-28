@@ -1,2 +1,25 @@
-<h1>Articles#standards_glossary</h1>
-<p>Find me in app/views/articles/standards_glossary.html.erb</p>
+<h1>Standards & Glossary</h1>
+
+<h2>Standards</h2>
+
+<% @standards.each do |article| %>
+ <p>Category: <%= article.category %></p>
+ <h2><%= article.title %></h2>
+ <h3><%= article.subtitle %></h3>
+ <p><%= article.body %></p>
+ <%= link_to "Read", article_path(article) %>
+<br>
+ <%= link_to "Delete Article", article_path(article), method: :delete %>
+<%end%>
+
+<h2>Glossary</h2>
+
+<% @glossary.each do |article| %>
+ <p>Category: <%= article.category %></p>
+ <h2><%= article.title %></h2>
+ <h3><%= article.subtitle %></h3>
+ <p><%= article.body %></p>
+ <%= link_to "Read", article_path(article) %>
+<br>
+ <%= link_to "Delete Article", article_path(article), method: :delete %>
+<%end%>

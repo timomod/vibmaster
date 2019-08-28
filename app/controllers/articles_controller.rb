@@ -10,23 +10,29 @@ class ArticlesController < ApplicationController
   end
 
   def casestudies
-    @press_articles = Article.where(category: 'Case-studies')
+    @casestudies = Article.where(category: 'Case-studies')
   end
 
   def science
-    @press_articles = Article.where(category: 'Science')
+    @science = Article.where(category: 'Science')
   end
 
   def standards_glossary
+    @standards = Article.where(category: 'Standard')
+    @glossary = Article.where(category: 'Glossary')
   end
 
   def factsheets
-    @press_articles = Article.where(category: 'Factsheets')
+    @factsheets = Article.where(category: 'Factsheets')
   end
 
   def manuals
-    @press_articles = Article.where(category: 'Manuals')
+    @manuals = Article.where(category: 'Manuals')
   end
+
+  # def index_by_tag
+  #   @articles_by_tag = Article.where()
+  # end
 
   # ******* CRUD BELOW ***************
 
@@ -62,7 +68,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :subtitle, :body, :category, :author, :promoted, :position )
+    params.require(:article).permit(:title, :subtitle, :body, :category, :author, :promoted, :position, tag_ids:[] )
   end
 
   def set_article

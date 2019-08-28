@@ -1,2 +1,11 @@
-<h1>Articles#factsheets</h1>
-<p>Find me in app/views/articles/factsheets.html.erb</p>
+<h1>Product factsheets</h1>
+
+<% @factsheets.each do |article| %>
+ <p>Category: <%= article.category %></p>
+ <h2><%= article.title %></h2>
+ <h3><%= article.subtitle %></h3>
+ <p><%= article.body %></p>
+ <%= link_to "Read", article_path(article) %>
+<br>
+ <%= link_to "Delete Article", article_path(article), method: :delete %>
+<%end%>

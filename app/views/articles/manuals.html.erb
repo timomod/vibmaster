@@ -1,2 +1,11 @@
-<h1>Articles#manuals</h1>
-<p>Find me in app/views/articles/manuals.html.erb</p>
+<h1>Operating Manuals</h1>
+
+<% @manuals.each do |article| %>
+ <p>Category: <%= article.category %></p>
+ <h2><%= article.title %></h2>
+ <h3><%= article.subtitle %></h3>
+ <p><%= article.body %></p>
+ <%= link_to "Read", article_path(article) %>
+<br>
+ <%= link_to "Delete Article", article_path(article), method: :delete %>
+<%end%>

@@ -8,3 +8,10 @@
 <br>
  <%= link_to "Delete Article", article_path(article), method: :delete %>
 <%end%>
+
+<br>
+<p>Tags:</p>
+
+<% @tags.each do |tag| %>
+	<p><%= tag.content %></p>
+<%end%>
