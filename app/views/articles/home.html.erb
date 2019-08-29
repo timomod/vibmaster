@@ -4,86 +4,92 @@
 		</div>
 		<div class="know-hero know-hero-gradient">
 		</div>
-		<div class="know-hero know-hero-overlay">
+		<div class="know-hero know-hero-overlay" style="background-image: url(<%= image_path 'overlay-pattern.png'%>)">
 		</div>
 		<div class="know-hero know-hero-content d-flex flex-column align-items-center justify-content-center">
-			<h2>.</h2>
+			<!-- <h2>.</h2>
 			<h1>.</h1>
-			<button type="button" class="btn btn-light">Get in touch</button>
+			<button type="button" class="btn btn-light">Get in touch</button> -->
 		</div>
-		
-	</section>
+</section>
 
-	<!-- GREEN DIVIDER SERCTION -->
-	<section class="bgr-green section-green"> 
-		<div class="container">
-			
-			xxxxxx
-		</div>
+<!-- GREEN DIVIDER SERCTION -->
+<section class="bgr-green section-green  text-light"> 
+	<div class="container">
 		
-	</section>
+		<h1>Knowledge center</h1>
+	</div>
+	
+</section>
 
 
 		<!--  KNOWLEDGE INTRO -->
 		<section class="know-section-top">
 			<!-- INTRO -->
 			<div class="section-intro know-intro">
-				<h2>Knowledge center </h2>
+				<!-- <h2>Knowledge center </h2> -->
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+
 			</div>	
 
 			<article class="know-card row">
-				<div class="know-card-img col-sm-4" style="background-image: url('img/news_images01.jpg');"></div>
+		
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= image_path 'news_images01.jpg' %>)"></div>
 				<div class="know-card-content col-sm-8">
 					<h2>The science</h2>
 					<div class="prod-content-ul"></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
-					<a href="#">Go to The science</a>
+					<%= link_to 'Go to The science', science_path, class: 'dropdown-item' %>
 				</div>
 			</article>
 
 			<article class="know-card row">
-				<div class="know-card-img col-sm-4" style="background-image: url('img/knowpic_03.jpg');"></div>
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= image_path 'knowpic_03.jpg' %>);"></div>
 				<div class="know-card-content col-sm-8">
 					<h2>Case-studies</h2>
 					<div class="prod-content-ul"></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+					<%= link_to 'Go to Case Studies', casestudies_path, class: 'dropdown-item' %>
 				</div>
 			</article>
 
 			<article class="know-card row">
-				<div class="know-card-img col-sm-4" style="background-image: url('img/knowpic_02.jpg');"></div>
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= image_path 'knowpic_02.jpg' %>);"></div>
 				<div class="know-card-content col-sm-8">
 					<h2>Articles</h2>
 					<div class="prod-content-ul"></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+					<%= link_to 'Go to articles', press_path, class: 'dropdown-item' %>
 				</div>
 			</article>
 
 			<article class="know-card row">
-				<div class="know-card-img col-sm-4" style="background-image: url('img/knowpic_01.jpg');"></div>
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= image_path 'knowpic_01.jpg' %>);"></div>
 				<div class="know-card-content col-sm-8">
 					<h2>Standards & Glossary</h2>
 					<div class="prod-content-ul"></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+					<%= link_to 'Go to standards and glossary', glossary_path, class: 'dropdown-item' %>
 				</div>
 			</article>
 
 			<article class="know-card row">
-				<div class="know-card-img col-sm-4" style="background-image: url('img/j900-prodbg02.jpg');"></div>
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= image_path 'j900-prodbg02.jpg' %>);"></div>
 				<div class="know-card-content col-sm-8">
 					<h2>Product Factsheets</h2>
 					<div class="prod-content-ul"></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+					<%= link_to 'Go to Product factsheets', factsheets_path, class: 'dropdown-item' %>
 				</div>
 			</article>
 
 			<article class="know-card row">
-				<div class="know-card-img col-sm-4" style="background-image: url('img/j900-prodbg02.jpg');"></div>
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= image_path 'j900-prodbg02.jpg' %>);"></div>
 				<div class="know-card-content col-sm-8">
 					<h2>Operating Manuals </h2>
 					<div class="prod-content-ul"></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+					<%= link_to 'Go to Operating manuals', manuals_path, class: 'dropdown-item' %>
 				</div>
 			</article>
 

@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  layout 'admin'
+
   before_action :set_article, only: [:show, :edit,:update, :destroy]
 
   def home

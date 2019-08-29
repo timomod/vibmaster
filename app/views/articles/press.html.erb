@@ -1,10 +1,60 @@
-<h1>News Articles</h1>
 
-<% @press_articles.each do |article| %>
- <h2><%= article.title %></h2>
- <h3><%= article.subtitle %></h3>
- <p><%= article.body %></p>
- <%= link_to "Read", article_path(article) %>
-<br>
- <%= link_to "Delete Article", article_path(article), method: :delete %>
-<%end%>
+
+<!-- GREEN DIVIDER SERCTION -->
+<section class="bgr-green section-green below-nav-margin text-light"> 
+	<div class="container">
+		
+		<h1>Articles</h1>
+	</div>
+	
+</section>
+
+<div class="d-flex justify-content-center">
+	<div class="btn btn-light" style="max-width: 250px; margin: 20px 0; border-radius: 5px;"><%= link_to "Create a new article", new_article_path %></div>
+</div>
+<!-- ARTICLE CONTENT -->
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="article-hero d-flex align-items-center " style="background-image: url(<%= image_path 'j121.jpg'%>)">
+					<div class=" article-hero-content">
+						<h2><%= @press_articles.first.title%></h2>
+						<h3><%= @press_articles.first.subtitle%></h3> 
+						<%= link_to "Read", article_path(@press_articles.first) %>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-article">
+	<div class="container">
+
+		<div class="row">
+			
+				
+					<% @press_articles.each do |article| %>
+						<div class="article-card col-sm-6">
+							<div class="article-card-img" style="background-image: url(<%= image_path 'j121.jpg'%>)"></div>
+							<div class="article-card-content">
+								<h2><%= article.title %></h2>
+								<h3><%= article.subtitle %></h3>
+								<p><%= article.body %></p>
+								<%= link_to "Read more", article_path(article) %>
+							</div>
+					
+							<%= link_to "Edit Article", edit_article_path(article) %> | 
+							<%= link_to "Delete Article", article_path(article), method: :delete %>
+						</div>
+					<%end%>
+				
+			
+		</div>
+	</div>
+</section>
+
+
