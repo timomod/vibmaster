@@ -2,25 +2,20 @@ class PagesController < ApplicationController
 
 	# skip_before_action :authenticate_user!, only: [:home, :j600] 
 
+	
 	def home
 	end
 
-	def products
-		@articles = Article.all
-		@tags = Tag.all
+	def portable
 	end
 
-	def j121
+	def rd	
 	end
 
-	def j160	
+	def testing
 	end
 
-	def j600
-	end
 
-	def j900
-	end
 
 
 end

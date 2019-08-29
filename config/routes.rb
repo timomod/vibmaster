@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'tags/create'
   get 'tags/destroy'
   get 'products', to: 'pages#products'
-  get 'products/j121-j160', to: 'pages#j121', as: 'portable_series'
-  get 'products/j600-j900', to: 'pages#j900', as: 'rd_series'
+  get 'products/portable-series', to: 'pages#portable', as: 'portable_series'
+  get 'products/research-and-development-series', to: 'pages#rd', as: 'rd_series'
 
 
   get 'knowledge-center', to: 'articles#home', as: 'knowledge_center'
