@@ -6,10 +6,12 @@
 	</div>
 	
 </section>
-
+<% if current_user.admin == true %>
 <div class="d-flex justify-content-center">
 	<div class="btn btn-light" style="max-width: 250px; margin: 20px 0; border-radius: 5px;"><%= link_to "Create a new article", new_article_path %></div>
 </div>
+<% end %>
+
 <!-- ARTICLE CONTENT -->
 <section>
 	<div class="container">
@@ -44,9 +46,10 @@
 								<p><%= article.body %></p>
 								<%= link_to "Read more", article_path(article) %>
 							</div>
-					
-							<%= link_to "Edit Article", edit_article_path(article) %> | 
-							<%= link_to "Delete Article", article_path(article), method: :delete %>
+							<% if current_user.admin == true %>
+								<%= link_to "Edit Article", edit_article_path(article) %> | 
+								<%= link_to "Delete Article", article_path(article), method: :delete %>
+							<% end %>
 						</div>
 					<%end%>
 				

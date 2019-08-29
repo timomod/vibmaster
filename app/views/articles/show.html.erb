@@ -7,28 +7,34 @@
 		<div class="know-article-hero know-hero-overlay" style="background-image: url(<%= image_path 'overlay-pattern.png'%>)">
 		</div>
 		<div class="know-article-hero know-hero-content d-flex flex-column align-items-center justify-content-center">
-			<!-- <h2>.</h2>
-			<h1>.</h1>
-			<button type="button" class="btn btn-light">Get in touch</button> -->
 		</div>
 </section>
 
+<section>
+	<div class="container">
 
- <h3><%= @article.category %></h3>
- <h1><%= @article.title %></h1>
- <h3><%= @article.subtitle %></h3>
- <p><%= @article.body %></p>
- <br>
- <p>Author:<%= @article.author %></p>
- <p><%= @article.promoted %></p>
- <p><%= @article.position %></p>
+		<div class="row">
+			<div class="col-12">
 
-<ul>
-	<% @article.tags.each do |tag| %>
-		<li><%= tag.content %></li>
-	<% end %>
-</ul>
 
+			 <h3><%= @article.category %></h3>
+			 <h1><%= @article.title %></h1>
+			 <h3><%= @article.subtitle %></h3>
+			 <br>
+			 <p>By: <%= @article.author %>, <%= @article.created_at %> </p>
+			<p>Tags:
+				<% @article.tags.each do |tag| %>
+					<%= tag.content %>, 
+				<% end %>
+			</p>
+			 <br>
+			 <p><%= @article.body %></p>
+			 <br>
+			
+			</div>
+		</div>
+	</div>
+</section>
 
 
 
