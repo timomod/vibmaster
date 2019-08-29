@@ -1,6 +1,17 @@
-<div style="padding: 100px 0">
 
-<h1>Edit article</h1>
+
+<section class="bgr-green section-green below-nav-margin text-light"> 
+	<div class="container">
+		
+		<h1>Edit Articles</h1>
+	</div>
+	
+</section>
+
+
+<div class="d-flex justify-content-center">
+	<div class="btn btn-light" style="max-width: 250px; margin: 20px 0; border-radius: 5px;"><%= link_to "Tags missing? Create new ones", new_tag_path %></div>
+</div>
 
 <%= render "form" %>
 

@@ -1,26 +1,39 @@
-<%= form_for @article do |f| %>
-	<%= f.label :category, "Choose a category" %>
-	<%= f.select :category, ['News', 'Case-studies', 'Science', 'Standard', 'Glossary', 'Factsheets', 'Manuals']%>
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-8 offset-2">
 
-	<%= f.label :title, "Add a title" %>
-	<%= f.text_field :title %>
+				<%= form_for @article do |f| %>
+					<%= f.label :category, "Choose a category" %> <br>
+					<%= f.select :category, ['News', 'Case-studies', 'Science', 'Standard', 'Glossary', 'Factsheets', 'Manuals']%> <br>
+					<br> <br>
+					<%= f.label :title, "Add a title" %> <br>
+					<%= f.text_field :title %>
+					<br> <br>
+					<%= f.label :subtitle, "Add a subtitle" %> <br>
+					<%= f.text_field :subtitle %>
+					<br> <br>
+					<%= f.label :body, "Add body text" %> <br>
+					<%= f.text_area :body, cols: "100", rows: "10" %>
+					<br> <br>
+					<%= f.label :author, "Add author" %> <br>
+					<%= f.text_field :author %>
+					<br> <br>
+					<%= f.label :position, "Add position" %> <br>
+					<%= f.number_field :position %>
+					<br> <br>
+					<%= f.label :promoted, "Promoted to front page?" %> <br>
+					<%= f.check_box :promoted %>
+					<br> <br>
+					<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :content %> <br>
+					<br> <br>
+					<%= f.submit%>
+				<% end %>
+								
 
-	<%= f.label :subtitle, "Add a subtitle" %>
-	<%= f.text_field :subtitle %>
+			</div>
+		</div>
+	</div>
 
-	<%= f.label :body, "Add body text" %>
-	<%= f.text_area :body %>
+</section>
 
-	<%= f.label :author, "Add author" %>
-	<%= f.text_field :author %>
-
-	<%= f.label :position, "Add position" %>
-	<%= f.number_field :position %>
-
-	<%= f.label :promoted, "Promoted to front page?" %>
-	<%= f.check_box :promoted %>
-
-	<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :content %>
-
-	<%= f.submit%>
-<% end %>
