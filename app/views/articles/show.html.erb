@@ -17,7 +17,8 @@
 
 		<div class="row">
 			<div class="col-12">
-
+			
+			<p><%= image_tag(@article.hero_image, width: 200) if @article.hero_image.attached? %> </p>
 			
 			 <h3><%= @article.category %></h3>
 			 <h1><%= @article.title %></h1>

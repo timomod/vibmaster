@@ -19,3 +19,6 @@ config/master.key
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#Ignore folder created for Google Cloud
+/config/secrets/*

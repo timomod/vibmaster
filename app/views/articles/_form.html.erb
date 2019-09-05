@@ -3,9 +3,19 @@
 		<div class="row">
 			<div class="col-8 offset-2">
 
+			
+
+
 				<%= form_for @article do |f| %>
 					<%= f.label :category, "Choose a category" %> <br>
 					<%= f.select :category, ['News', 'Case-studies', 'Science', 'Standard', 'Glossary', 'Factsheets', 'Manuals']%> <br>
+					<br> <br>
+					<%= f.label :hero_image, "Upload an Image" %> <br>
+					<%= f.file_field :hero_image %>
+					
+					<p><%= image_tag(@article.hero_image, width: 200) if @article.hero_image.attached? %> </p>
+					
+
 					<br> <br>
 					<%= f.label :title, "Add a title" %> <br>
 					<%= f.text_field :title %>
@@ -25,6 +35,7 @@
 					<%= f.label :promoted, "Promoted to front page?" %> <br>
 					<%= f.check_box :promoted %>
 					<br> <br>
+					<%= f.label :tag_ids, "Tags" %> <br>
 					<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :content %> <br>
 					<br> <br>
 					<%= f.submit%>

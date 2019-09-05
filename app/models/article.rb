@@ -5,4 +5,6 @@ class Article < ApplicationRecord
 
 	validates :title, presence: true  
 	validates :category, presence: true  
+
+	has_one_attached :hero_image
 end
