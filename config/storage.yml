@@ -7,6 +7,19 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 
+
+google:
+  service: GCS
+  project: vibmaster
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+  bucket: vibmaster-bucket
+google_dev:
+  service: GCS
+  project: vibmaster
+  credentials: <%= Rails.root.join("config/secrets/vibmaster.json") %>
+  bucket: vibmaster-bucket
+
+
   
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
