@@ -13,6 +13,7 @@ google:
   project: vibmaster
   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
   bucket: vibmaster-bucket
+  
 google_dev:
   service: GCS
   project: vibmaster
