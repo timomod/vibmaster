@@ -58,8 +58,7 @@
 
 
 
-
-	<!-- NEWS CARDS -->
+		<!-- NEWS CARDS -->
 	<section class="news-section">
 		<!-- INTRO -->
 		<div class="section-intro news-intro">
@@ -69,38 +68,27 @@
 		<!-- CARDS -->
 		<div class="news-container">
 
-			<div class="news-card">
-				<h4>Fastener science</h4>
-				<h3>Why threaded fasteners self-loosen </h3>
-				<div class="news-image" style="background-image: url('img/news_images01.jpg');">
-					<div class="news-image-overlay"></div>
-				</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi velit nobis laboriosam, voluptas iusto provident mollitia dolorum quasi, ex fugiat fugit vitae, commodi nemo quis aspernatur voluptatibus? Iure omnis, eveniet?</p>
-				<a href="#">Learn more</a>
-			</div>
+			<% @articles_promoted.each do |article| %>
 
 			<div class="news-card">
-				<h4>Case study - Solar energy industry</h4>
-				<h3>Header</h3>
-				<div class="news-image" style="background-image: url('img/news_images02.jpg');">
+				<h4><%= article.category%></h4> 
+				<h3><%= article.subtitle%></h3> 
+				<div class="news-image" style="background-image: url(<%= rails_blob_url(article.hero_image) if article.hero_image.attached? %>);">
 					<div class="news-image-overlay"></div>
 				</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi velit nobis laboriosam, voluptas iusto provident mollitia dolorum quasi, ex fugiat fugit vitae, commodi nemo quis aspernatur voluptatibus? Iure omnis, eveniet?</p>
-			</div>
-			<div class="news-card">
-				<h4>Tag</h4>
-				<h3>Header</h3>
-				<div class="news-image" style="background-image: url('img/news_images03.jpg');">
-					<div class="news-image-overlay"></div>
-				</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi velit nobis laboriosam, voluptas iusto provident mollitia dolorum quasi, ex fugiat fugit vitae, commodi nemo quis aspernatur voluptatibus? Iure omnis, eveniet?</p>
+				<p style="min-height: 100px; padding-top: 20px;"><%= truncate(article.body, length: 160, separator: ' ') %></p>
+				<%= link_to "Read more", article_path(article) %>
 			</div>
 
-
-
+			<% end %>
 
 		</div>
 	</section>
+
+
+
+
+
 
 
 

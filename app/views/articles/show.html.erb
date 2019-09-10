@@ -1,6 +1,7 @@
 <section id="know-article-hero-section">
 		<!-- <div class="know-hero know-hero-image know-hero-imag"> -->
-		<div class="know-article-hero know-hero-image" style="background-image: url(<%= image_path 'knowledge-center-BG02.jpg'%>)">
+		<div class="know-article-hero know-hero-overlay" style="background-image: url(<%= rails_blob_url(@article.hero_image) if @article.hero_image.attached? %>)">
+
 		</div>
 		<div class="know-article-hero know-hero-gradient">
 		</div>
@@ -17,8 +18,14 @@
 
 		<div class="row">
 			<div class="col-12">
+				<% if current_user.admin == true %>
+								<%= link_to "Edit Article", edit_article_path(@article) %> | 
+								<%= link_to "Delete Article", article_path(@article), method: :delete %>
+							<% end %>
+			</div>
+			<div class="col-12">
 			
-			<p><%= image_tag(@article.hero_image, width: 200) if @article.hero_image.attached? %> </p>
+		
 			
 			 <h3><%= @article.category %></h3>
 			 <h1><%= @article.title %></h1>

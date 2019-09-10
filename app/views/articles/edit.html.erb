@@ -1,19 +1,26 @@
 
 
-<section class="bgr-green section-green below-nav-margin text-light"> 
-	<div class="container">
-		
-		<h1>Edit Articles</h1>
+
+
+<% if current_user.admin == true %>
+
+	<section class="bgr-green section-green below-nav-margin text-light"> 
+		<div class="container">
+			<h1>Edit Articles</h1>
+		</div>
+	</section>
+	<div class="d-flex justify-content-center">
+		<div class="btn btn-light" style="max-width: 250px; margin: 20px 0; border-radius: 5px;"><%= link_to "Tags missing? Create new ones", new_tag_path %></div>
 	</div>
 	
-</section>
+	<%= render "form" %>
 
 
-<div class="d-flex justify-content-center">
-	<div class="btn btn-light" style="max-width: 250px; margin: 20px 0; border-radius: 5px;"><%= link_to "Tags missing? Create new ones", new_tag_path %></div>
-</div>
+<% else %>
 
-<%= render "form" %>
+	<div style="padding: 100px 0">
+		<h3>You are not authorized to view this page</h3>
+	</div>
 
-</div>
+<% end %>
 

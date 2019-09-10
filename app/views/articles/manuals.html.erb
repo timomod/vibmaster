@@ -9,27 +9,13 @@
 	
 </section>
 
+<% if current_user.admin == true %>
 <div class="d-flex justify-content-center">
 	<div class="btn btn-light" style="max-width: 250px; margin: 20px 0; border-radius: 5px;"><%= link_to "Create a new article", new_article_path %></div>
 </div>
+<% end %>
 <!-- ARTICLE CONTENT -->
-<!-- <section>
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
 
-				<div class="article-hero d-flex align-items-center " style="background-image: url(<%= image_path 'j121.jpg'%>)">
-					<div class=" article-hero-content">
-						<h2><%= @manuals.first.title%></h2>
-						<h3><%= @manuals.first.subtitle%></h3> 
-						<%= link_to "Read", article_path(@manuals.first) %>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-</section> -->
 
 <section class="section-article">
 	<div class="container">
@@ -39,7 +25,7 @@
 				
 					<% @manuals.each do |article| %>
 						<div class="article-card col-sm-6">
-							<div class="article-card-img" style="background-image: url(<%= image_path 'j121.jpg'%>)"></div>
+							<div class="article-card-img" style="background-image: url(<%= rails_blob_url(article.hero_image) %>)"></div>
 							<div class="article-card-content">
 								<h2><%= article.title %></h2>
 								<h3><%= article.subtitle %></h3>

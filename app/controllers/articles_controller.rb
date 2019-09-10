@@ -8,15 +8,15 @@ class ArticlesController < ApplicationController
   end
 
   def press
-    @press_articles = Article.where(category: 'News')
+    @press_latest, *@press_articles = Article.where(category: 'News').order(created_at: :desc)
   end
 
   def casestudies
-    @casestudies = Article.where(category: 'Case-studies')
+    @casestudies_latest, *@casestudies = Article.where(category: 'Case-studies').order(created_at: :desc)
   end
 
   def science
-    @science = Article.where(category: 'Science')
+    @science_latest, *@science = Article.where(category: 'Science').order(created_at: :desc)
   end
 
   def standards_glossary

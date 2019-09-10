@@ -18,11 +18,11 @@
 		<div class="row">
 			<div class="col-12">
 
-				<div class="article-hero d-flex align-items-center " style="background-image: url(<%= image_path 'j121.jpg'%>)">
+				<div class="article-hero d-flex align-items-center " style="background-image: url(<%= rails_blob_url(@science_latest.hero_image) if @science_latest.hero_image.attached? %>)">
 					<div class=" article-hero-content">
-						<h2><%= @science.first.title%></h2>
-						<h3><%= @science.first.subtitle%></h3> 
-						<%= link_to "Read", article_path(@science.first) %>
+						<h2><%= @science_latest.title%></h2>
+						<h3><%= @science_latest.subtitle%></h3> 
+						<%= link_to "Read", article_path(@science_latest) %>
 					</div>
 				</div>
 
@@ -39,8 +39,9 @@
 				
 					<% @science.each do |article| %>
 						<div class="article-card col-sm-6">
-							<div class="article-card-img" style="background-image: url(<%= image_path 'j121.jpg'%>)"></div>
+							<div class="article-card-img" style="background-image: url(<%= rails_blob_url(article.hero_image)%>)"></div>
 							<div class="article-card-content">
+								<p><%= article.created_at%></p>
 								<h2><%= article.title %></h2>
 								<h3><%= article.subtitle %></h3>
 								<p><%= truncate(article.body, length: 200, separator: ' ') %></p>

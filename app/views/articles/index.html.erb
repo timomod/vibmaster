@@ -1,11 +1,72 @@
-<h1>All Articles</h1>
 
-<% @articles.each do |article| %>
- <p>Category: <%= article.category %></p>
- <h2><%= article.title %></h2>
- <h3><%= article.subtitle %></h3>
- <p><%= article.body %></p>
- <%= link_to "Read", article_path(article) %>
-<br>
- <%= link_to "Delete Article", article_path(article), method: :delete %>
-<%end%>
+<% if current_user.admin == true %>
+
+
+
+
+
+
+
+
+
+<section id="know-hero-section">
+		<!-- <div class="know-hero know-hero-image know-hero-imag"> -->
+		<div class="know-hero know-hero-image" style="background-image: url(<%= image_path 'knowledge-center-BG02.jpg'%>)">
+		</div>
+		<div class="know-hero know-hero-gradient">
+		</div>
+		<div class="know-hero know-hero-overlay" style="background-image: url(<%= image_path 'overlay-pattern.png'%>)">
+		</div>
+		<div class="know-hero know-hero-content d-flex flex-column align-items-center justify-content-center">
+			<!-- <h2>.</h2>
+			<h1>.</h1>
+			<button type="button" class="btn btn-light">Get in touch</button> -->
+		</div>
+</section>
+
+<!-- GREEN DIVIDER SERCTION -->
+<section class="bgr-green section-green  text-light"> 
+	<div class="container">
+		
+		<h1>All articles</h1>
+	</div>
+	
+</section>
+
+
+		<!--  KNOWLEDGE INTRO -->
+		<section class="know-section-top">
+			<!-- INTRO -->
+			<div class="section-intro know-intro">
+				<!-- <h2>Knowledge center </h2> -->
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+
+			</div>	
+			<% @articles.each do |article| %>
+
+			<article class="know-card row">
+		
+				<div class="know-card-img col-sm-4" style="background-image: url(<%= rails_blob_url(article.hero_image) if article.hero_image.attached? %>)"></div>
+				<div class="know-card-content col-sm-8">
+					<p>Category: <%= article.category %></p>
+					<h2><%= article.title %></h2>
+			 		<h3><%= article.subtitle %></h3>
+					<p><%= truncate(article.body, length: 200, separator: ' ') %></p>
+					<%= link_to "Go to article", article_path(article) %>
+				</div>
+			</article>
+
+			<% end %>
+
+			
+	</section>
+
+
+
+	<% else %>
+
+	<div style="padding: 100px 0">
+		<h3>You are not authorized to view this page</h3>
+	</div>
+
+<% end %>
