@@ -18,6 +18,10 @@ gem 'devise'
 gem 'jquery-rails'
 gem "google-cloud-storage", "~> 1.8", require: false
 
+gem 'tinymce-rails'
+
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'better_errors'
