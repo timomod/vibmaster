@@ -8,6 +8,7 @@ local:
 
 
 
+
 google:
   service: GCS
   project: vibmaster
@@ -20,8 +21,6 @@ google_dev:
   credentials: <%= Rails.root.join("config/secrets/vibmaster.json") %>
   bucket: vibmaster-bucket
 
-
-  
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
@@ -49,3 +48,4 @@ google_dev:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
