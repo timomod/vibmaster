@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.5.5'
 
+
+
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -18,7 +20,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem "google-cloud-storage", "~> 1.8", require: false
 
-gem 'tinymce-rails'
+
 
 
 

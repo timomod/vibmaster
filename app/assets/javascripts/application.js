@@ -1,7 +1,6 @@
 
 //= require jquery
 //= require rails-ujs
-//= require tinymce-jquery
- //= require tinymce
+//= require trix
 //= require_tree .
 
