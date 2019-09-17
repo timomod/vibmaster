@@ -16,7 +16,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'jquery-rails'
 gem "google-cloud-storage", "~> 1.8", require: false
 
