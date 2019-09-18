@@ -47,7 +47,7 @@
 								<p><%= article.created_at %></p>
 								<h2><%= article.title %></h2>
 								<h3><%= article.subtitle %></h3>
-								<p><%= truncate(article.body, length: 200, separator: ' ') %></p>
+								<p><%= truncate(strip_tags(article.rich_text_body.to_s), length: 160, separator: ' ') %></p>
 								<%= link_to "Read more", article_path(article) %>
 							</div>
 					

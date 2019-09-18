@@ -51,7 +51,8 @@
 					<p>Category: <%= article.category %></p>
 					<h2><%= article.title %></h2>
 			 		<h3><%= article.subtitle %></h3>
-					<p><%= truncate(article.body, length: 200, separator: ' ') %></p>
+					<p><%= truncate(strip_tags(article.rich_text_body.to_s), length: 200) %></p>
+					<!-- truncate(article.body, length: 200, separator: ' ') -->
 					<%= link_to "Go to article", article_path(article) %>
 				</div>
 			</article>

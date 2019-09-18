@@ -76,7 +76,7 @@
 				<div class="news-image" style="background-image: url(<%= rails_blob_url(article.hero_image) if article.hero_image.attached? %>);">
 					<div class="news-image-overlay"></div>
 				</div>
-				<p style="min-height: 100px; padding-top: 20px;"><%= truncate(article.body, length: 160, separator: ' ') %></p>
+				<p style="min-height: 100px; padding-top: 20px;"><%= truncate(strip_tags(article.rich_text_body.to_s), length: 160, separator: ' ') %></p>
 				<%= link_to "Read more", article_path(article) %>
 			</div>
 
