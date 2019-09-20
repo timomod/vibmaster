@@ -36,6 +36,9 @@
 					<%= f.label :promoted, "Promoted to front page?" %> <br>
 					<%= f.check_box :promoted %>
 					<br> <br>
+					<%= f.label :series, "Show on Product page? Choose series" %> <br>
+					<%= f.select :series, [ 'Do not show','portable', 'rd' ] %>
+					<br> <br>
 					<%= f.label :tag_ids, "Tags" %> <br>
 					<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :content %> <br>
 					<br> <br>

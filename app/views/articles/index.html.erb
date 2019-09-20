@@ -49,6 +49,7 @@
 				<div class="know-card-img col-sm-4" style="background-image: url(<%= rails_blob_url(article.hero_image) if article.hero_image.attached? %>)"></div>
 				<div class="know-card-content col-sm-8">
 					<p>Category: <%= article.category %></p>
+					<p>Series: <%= article.series %></p>
 					<h2><%= article.title %></h2>
 			 		<h3><%= article.subtitle %></h3>
 					<p><%= truncate(strip_tags(article.rich_text_body.to_s), length: 200) %></p>

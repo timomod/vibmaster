@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 	end
 
 	def portable
+		@articles_series_portable = Article.where(series: "portable").order(created_at: :desc).limit(3)
 	end
 
 	def rd	

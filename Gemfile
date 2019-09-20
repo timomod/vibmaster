@@ -20,6 +20,8 @@ gem "devise", ">= 4.7.1"
 gem 'jquery-rails'
 gem "google-cloud-storage", "~> 1.8", require: false
 
+gem 'image_processing', '~> 1.9', '>= 1.9.3'
+
 
 
 
