@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   layout 'admin'
 
-  before_action :set_article, only: [:show, :edit,:update, :destroy]
+  before_action :set_article, only: [:show,:edit,:update, :destroy]
 
   def home
   end
@@ -74,7 +74,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
 end

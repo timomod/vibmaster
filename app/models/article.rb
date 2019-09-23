@@ -10,4 +10,7 @@ class Article < ApplicationRecord
 	validates :category, presence: true  
 
 	has_one_attached :hero_image
+
+	extend FriendlyId
+  	friendly_id :subtitle, use: :slugged
 end
