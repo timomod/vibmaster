@@ -172,70 +172,31 @@
 
 
 	<!-- CASE STUDIES -->
-	<section class="bgr-extra-dark">
+	<!-- NEWS CARDS -->
+	<section class="news-section">
 		<!-- INTRO -->
-		<div class="section-intro prod-intro">
+		<div class="section-intro news-intro">
 			<h2>Case studies</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas pariatur mollitia error deleniti harum illo provident atque laboriosam expedita a ipsam voluptates.</p>
+			<p>Read how our current clients have benefited from the use of our Research and Development Series test benches</p>
 		</div>
-		
+		<!-- CARDS -->
+		<div class="news-container">
 
-		<div class="bd-example">
-			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-					<!-- <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> -->
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-					<div src="..." class="d-block w-100" alt="...">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="slide-content">
-								<h3 class="slide-item">This is a header header header header header header</h3>
-								<p class="slide-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse in dicta, at tempore vel quae similique dignissimos animi minus! Iusto inventore sapiente rem doloremque laborum quae ea nihil beatae placeat.</p>
-								<a class="slide-item" href="#">Read more</a>
-							</div>
-						</div>
-						<div class="col-md-6 slide-img-style" style="background-image: url(img/news_images01.jpg)"></div>
-					</div>
-					</div>
-					</div>
+			<% @articles_series_portable.each do |article| %>
 
-					<div class="carousel-item">
-					<div src="..." class="d-block w-100" alt="...">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="slide-content">
-								<h3 class="slide-item">Second heading this is a header header header header</h3>
-								<p class="slide-item">Esse in dicta, at tempore vel quae similique dignissimos animi minus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-								<a class="slide-item" href="#">Read more</a>
-							</div>
-						</div>
-						<div class="col-md-6 slide-img-style" style="background-image: url(img/news_images03.jpg)"></div>
-					</div>
-					</div>
-					</div>
-
-				
-
+			<div class="news-card">
+				<h4><%= article.title%></h4> 
+				<h3><%= article.subtitle%></h3> 
+				<div class="news-image" style="background-image: url(<%= rails_blob_url(article.hero_image) if article.hero_image.attached? %>);">
+					<div class="news-image-overlay"></div>
 				</div>
-
-				<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
+				<p style="min-height: 100px; padding-top: 20px;"><%= truncate(strip_tags(article.rich_text_body.to_s), length: 160, separator: ' ') %></p>
+				<%= link_to "Read more", article_path(article) %>
 			</div>
+
+			<% end %>
+
 		</div>
-
-
-
-
 	</section>
 
 
